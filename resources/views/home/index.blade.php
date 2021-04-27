@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title', 'Laravel E-Ticaret Sitesi')
+@section('title', 'Laravel E-Ticaret Sitesi Github')
 
 @section('description')
     Türkiyenin Kitap Satış Sitesi
