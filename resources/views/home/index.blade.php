@@ -1,11 +1,9 @@
 @extends('layouts.home')
 
-@section('title', 'Laravel E-Ticaret Sitesi Github')
+@section('title', $setting->title)
 
-@section('description')
-    Türkiyenin Kitap Satış Sitesi
-@endsection
-@section('keywords', 'Book, Literature, Humor, Child and Youth')
+@section('description') {{$setting->description}} @endsection
+@section('keywords',$setting -> keywords)
 
 
 
