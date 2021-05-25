@@ -10,13 +10,7 @@
             <!-- footer widget -->
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="footer">
-                    <!-- footer logo -->
-                    <div class="footer-logo">
-                        <a class="logo" href="{{route('home')}}">
-                            <img src="{{asset('assets')}}/img/logo.png" alt="">
-                        </a>
-                    </div>
-                    <!-- /footer logo -->
+
                     <h4>Address</h4>
                     {{$setting->company}}<br>
                     {{$setting->address}}<br>
@@ -63,26 +57,12 @@
                         <li><a href="{{route('aboutus')}}">About Us</a></li>
                         <li><a href="#">Shiping & Return</a></li>
                         <li><a href="#">Shiping Guide</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="{{route('faq')}}">FAQ</a></li>
                     </ul>
                 </div>
             </div>
             <!-- /footer widget -->
 
-            <!-- footer subscribe -->
-            <div class="col-md-3 col-sm-6 col-xs-6">
-                <div class="footer">
-                    <h3 class="footer-header">Stay Connected</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                    <form>
-                        <div class="form-group">
-                            <input class="input" placeholder="Enter Email Address">
-                        </div>
-                        <button class="primary-btn">Join Newslatter</button>
-                    </form>
-                </div>
-            </div>
-            <!-- /footer subscribe -->
         </div>
         <!-- /row -->
         <hr>
@@ -105,9 +85,9 @@
 <!-- /FOOTER -->
 
 <!-- jQuery Plugins -->
-<script src="{{asset('assets')}}/js/jquery.min.js"></script>
-<script src="{{asset('assets')}}/js/bootstrap.min.js"></script>
-<script src="{{asset('assets')}}/js/slick.min.js"></script>
-<script src="{{asset('assets')}}/js/nouislider.min.js"></script>
-<script src="{{asset('assets')}}/js/jquery.zoom.min.js"></script>
-<script src="{{asset('assets')}}/js/main.js"></script>
+<script src="{{ asset('assets')}}/js/jquery.min.js"></script>
+<script src="{{ asset('assets')}}/js/bootstrap.min.js"></script>
+<script src="{{ asset('assets')}}/js/slick.min.js"></script>
+<script src="{{ asset('assets')}}/js/nouislider.min.js"></script>
+<script src="{{ asset('assets')}}/js/jquery.zoom.min.js"></script>
+<script src="{{ asset('assets')}}/js/main.js"></script>

@@ -4,29 +4,15 @@
     <div id="top-header">
         <div class="container">
             <div class="pull-left">
-                <span>Welcome to E-shop!</span>
+                @include('home.message')
             </div>
             <div class="pull-right">
                 <ul class="header-top-links">
-                    <li><a href="#">Store</a></li>
-                    <li><a href="#">Newsletter</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li class="dropdown default-dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">ENG <i class="fa fa-caret-down"></i></a>
-                        <ul class="custom-menu">
-                            <li><a href="#">English (ENG)</a></li>
-                            <li><a href="#">Russian (Ru)</a></li>
-                            <li><a href="#">French (FR)</a></li>
-                            <li><a href="#">Spanish (Es)</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown default-dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">USD <i class="fa fa-caret-down"></i></a>
-                        <ul class="custom-menu">
-                            <li><a href="#">USD ($)</a></li>
-                            <li><a href="#">EUR (€)</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="{{route('home')}}">Store</a></li>
+                    <li><a href="{{route('aboutus')}}">About Us</a></li>
+                    <li><a href="{{route('faq')}}">FAQ</a></li>
+                    <li><a href="{{route('contact')}}">Contact</a></li>
+                    <li><a href="{{route('logout')}}">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -40,22 +26,19 @@
                 <!-- Logo -->
                 <div class="header-logo">
                     <a class="logo" href="{{route('home')}}">
-                        <img src="{{asset('assets')}}/img/logo.png" alt="">
+                        <img src="{{ asset('assets')}}/img/logo.png" alt="">
                     </a>
                 </div>
-                <!-- /Logo -->
 
                 <!-- Search -->
                 <div class="header-search">
-                    <form>
-                        <input class="input search-input" type="text" placeholder="Enter your keyword">
-                        <select class="input search-categories">
-                            <option value="0">All Categories</option>
-                            <option value="1">Category 01</option>
-                            <option value="1">Category 02</option>
-                        </select>
-                        <button class="search-btn"><i class="fa fa-search"></i></button>
+                    <form action="{{route('getproduct')}}" method="post">
+                        @csrf
+                        @livewire('search')
+                        <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
                     </form>
+                    @livewireScripts
+
                 </div>
                 <!-- /Search -->
             </div>
@@ -65,43 +48,50 @@
 
                     <li class="header-account dropdown default-dropdown">
                         @auth
-                        <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
-                            <div class="header-btns-icon">
-                                <i class="fa fa-user-o"></i>
+                            <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                                <div class="header-btns-icon">
+                                    <i class="fa fa-user-o"></i>
+                                </div>
+
+                                <strong class="text-uppercase">{{ Auth::user()->name }}   <i class="fa fa-caret-down"></i>  </strong>
                             </div>
-                            <strong class="text-uppercase">{{Auth::user()->name}}<i class="fa fa-caret-down"></i></strong>
-                        </div>
                         @endauth
                         @guest
-                        <a href="/login" class="text-uppercase">Login</a> / <a href="/register" class="text-uppercase">Join</a>
-                            @endguest
+                            <a href="/login" class="text-uppercase">Login</a> / <a href="/register" class="text-uppercase">Join</a>
+                        @endguest
+
                         <ul class="custom-menu">
-                            <li><a href="{{route('myprofile')}}"><i class="fa fa-user-o"></i> My Account</a></li>
-                            <li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
-                            <li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
-                            <li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-                            <li><a href="{{route('logout')}}"><i class="fa fa-user-plus"></i> Logout</a></li>
+                            <li><a href="{{ route('myprofile') }}"><i class="fa fa-user-o"></i> My Account</a></li>
+                            <li><a href="{{route('myreviews')}}"><i class="fa fa-comments-o"></i> My Reviews</a></li>
+                            <li><a href="{{route('user_products')}}"><i class="fa fa-book"></i> My Products</a></li>
+                            <li><a href="{{route('user_shopcart')}}"><i class="fa fa-cart-plus"></i>My Shopcart</a></li>
+                            <li><a href="{{route('user_orders')}}"><i class="fa fa-shopping-cart"></i>My Orders</a></li>
+                            <li><a href="{{ route('logout') }}"><i class="fa fa-user-plus"></i> Logout</a></li>
                         </ul>
+
                     </li>
                     <!-- /Account -->
 
                     <!-- Cart -->
                     <li class="header-cart dropdown default-dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                            <div class="header-btns-icon">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span class="qty">3</span>
-                            </div>
-                            <strong class="text-uppercase">My Cart:</strong>
+                            <a href="{{route('user_shopcart')}}">
+                                <div class="header-btns-icon">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <span class="qty">{{\App\Http\Controllers\ShopcartController::countshopcart()}}</span>
+                                </div>
+
+                                <strong class="text-uppercase">My Cart:</strong>
+                            </a>
                             <br>
-                            <span>35.20$</span>
+
                         </a>
                         <div class="custom-menu">
                             <div id="shopping-cart">
                                 <div class="shopping-cart-list">
                                     <div class="product product-widget">
                                         <div class="product-thumb">
-                                            <img src="{{asset('assets')}}/img/thumb-product01.jpg" alt="">
+                                            <img src="{{ asset('assets')}}/img/thumb-product01.jpg" alt="">
                                         </div>
                                         <div class="product-body">
                                             <h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
@@ -111,7 +101,7 @@
                                     </div>
                                     <div class="product product-widget">
                                         <div class="product-thumb">
-                                            <img src="{{asset('assets')}}/img/thumb-product01.jpg" alt="">
+                                            <img src="{{ asset('assets')}}/img/thumb-product01.jpg" alt="">
                                         </div>
                                         <div class="product-body">
                                             <h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
@@ -127,6 +117,7 @@
                             </div>
                         </div>
                     </li>
+
                     <!-- /Cart -->
 
                     <!-- Mobile nav toggle-->

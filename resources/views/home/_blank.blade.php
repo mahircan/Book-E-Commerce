@@ -1,13 +1,9 @@
 @extends('layouts.home')
 
-@section('title', $setting->title)
+@section('title', $data->title)
 
-@section('description') {{$setting->description}} @endsection
-@section('keywords',$setting -> keywords)
-
-
-
-
+@section('description') {{$data->description}} @endsection
+@section('keywords',$data -> keywords)
 
 @section('content')
 
@@ -29,9 +25,7 @@
         <!-- row -->
         <div class="row">
 
-
             içerik alanı
-
 
         </div>
         <!-- /row -->

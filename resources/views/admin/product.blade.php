@@ -14,7 +14,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin_home') }}">Home</a></li>
                             <li class="breadcrumb-item active">Product</li>
                         </ol>
                     </div>
@@ -38,7 +38,7 @@
                             <th>Id</th>
                             <th>Category</th>
                             <th>Title(s)</th>
-                            <th>Quantitiy</th>
+                            <th>Quantity</th>
                             <th>Price</th>
                             <th>Image</th>
                             <th>Image Galery</th>
@@ -54,7 +54,7 @@
                                     {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category, $rs->category->title)}}
                                 </td>
                                 <td>{{ $rs->title }}</td>
-                                <td>{{ $rs->quantitiy }}</td>
+                                <td>{{ $rs->quantity }}</td>
                                 <td>{{ $rs->price }}</td>
                                 <td>
                                     @if($rs->image)
@@ -63,15 +63,17 @@
                                 </td>
                                 <td><a href="{{route('admin_image_add', ['product_id' => $rs->id])}}" onclick="return !window.open(this.href, '','top=50 left=100 width=1100,height=700')"><img src="{{asset('assets/admin/images')}}/crop.png" height="25"></a></td>
                                 <td>{{ $rs->status }}</td>
-                                <td> <a href="{{route('admin_product_edit', ['id' => $rs->id] )}}"> Edit  </a></td>
-                                <td> <a href="{{route('admin_product_delete', ['id' => $rs->id])}}" onclick="return confirm('Delete! Are you sure?')" > Delete </a> </td>
+                                <td> <a href="{{route('admin_product_edit', ['id' => $rs->id] )}}"> <img src="{{asset('assets/admin/images')}}/edit.png" height="25">  </a></td>
+                                <td> <a href="{{route('admin_product_delete', ['id' => $rs->id])}}" onclick="return confirm('Delete! Are you sure?')" > <img src="{{asset('assets/admin/images')}}/delete.png" height="25"></a> </td>
                             </tr>
                         @endforeach
-
                     </table>
                 </div>
                 <!-- /.card-body -->
             </div>
+            <!-- /.card -->
+
+
 
             <!-- /.card-body -->
             <div class="card-footer">
@@ -85,14 +87,15 @@
     <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+
 @endsection
 
 @section('footer')
-    <script src="{{asset('assets')}}/admin/plugins/chart.js/Chart.min.js"></script>
-    <script src="{{asset('assets')}}/admin/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="{{asset('assets')}}/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="{{asset('assets')}}/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="{{asset('assets')}}/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="{{ asset('assets')}}/admin/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <script src="{{ asset('assets')}}/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('assets')}}/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="{{ asset('assets')}}/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="{{ asset('assets')}}/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
     <script>
         $(function () {
             $("#example1").DataTable({

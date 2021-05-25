@@ -18,7 +18,7 @@
                         <img src="{{ Storage::url($rs->image)}}" style="height: 500px" alt="">
                         <div class="banner-caption text-center ">
                             <h3>{{$rs->title}}</h3>
-                            <h3 class="white-color font-weak">{{$rs->price}}t</h3>
+                            <h3 class="black-color font-weak">{{$rs->price}}TL</h3>
                             <a href="{{route('product',['id' => $rs->id,'slug' => $rs->slug ])}}" class="primary-btn">Shop Now</a>
                         </div>
 

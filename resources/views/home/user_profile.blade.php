@@ -2,11 +2,6 @@
 
 @section('title', 'User Profile')
 
-
-
-
-
-
 @section('content')
 
     <!-- BREADCRUMB -->
