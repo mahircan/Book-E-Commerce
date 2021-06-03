@@ -30,7 +30,6 @@
 
         <!-- Main content -->
         <section class="content">
-
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
@@ -44,17 +43,14 @@
                     </div>
                 </div>
                 <div class="card-body">
-
                     <!-- form start -->
                     <form role="form" action="{{route('admin_image_store', ['product_id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
-
                             <div class="form-group">
                                 <label >Title</label>
                                 <input type="text" id="title" name="title" class="form-control" >
                             </div>
-
                             <div class="form-group">
                                 <label > Image </label>
                                 <input type="file" name="image" class="form-control" >
@@ -64,7 +60,6 @@
                             <button type="submit" class="btn btn-primary">Add Image</button>
                         </div>
                     </form>
-
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
@@ -78,7 +73,6 @@
                         @foreach($images as $rs)
                             <tr>
                                 <td>{{ $rs->id }}</td>
-
                                 <td>{{ $rs->title }}</td>
                                 <td>
                                     @if($rs->image)
@@ -90,7 +84,6 @@
                         @endforeach
                         </tbody>
                     </table>
-
                     <!-- /.card-body -->
                     <div class="card-footer">
                         Footer
@@ -98,7 +91,6 @@
                     <!-- /.card-footer-->
                 </div>
                 <!-- /.card -->
-
         </section>
         <!-- /.content -->
     </div>

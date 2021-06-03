@@ -12,7 +12,6 @@
 <!-- Custom stlylesheet -->
 <link type="text/css" rel="stylesheet" href="{{ asset('assets')}}/css/style.css" />
 
-
 <!-- Main content -->
 <section class="content">
 
@@ -24,9 +23,7 @@
         </div>
         <div class="card-body">
 
-
             <!-- form start -->
-
             <div class="card-body">
                 <form role="form" action="{{route('admin_order_update',['id'=>$data->id])}}" method="post">
                     @csrf
@@ -87,7 +84,6 @@
                         </tr>
                     </table>
                 </form>
-
                 <table class="shopping-cart-table table">
                     <thead>
                     <tr>
@@ -131,7 +127,6 @@
                                 </td>
                                 <td> <textarea name="note"  cols="15"> {{ $rs->note}} </textarea></td>
                                 <td> <input type="submit" value="Update" ></td>
-
                             </tr>
                         </form>
                     @endforeach
@@ -142,12 +137,10 @@
                         <th>SUBTOTAL</th>
                         <th colspan="2" class="sub-total">${{$rs->order->total}}</th>
                     </tr>
-
                     </tfoot>
                 </table>
             </div>
             <!-- /.card-body -->
-
             <!-- /.card-body -->
             <div class="card-footer">
                 ..

@@ -7,8 +7,13 @@
             <li><a href="{{route('user_orders')}}">My Orders</a></li>
             <li><a href="{{route('myreviews')}}">My Reviews</a></li>
             <li><a href="{{route('user_shopcart')}}">My Shopcart</a></li>
-            <li><a href="{{route('user_products')}}">My Product</a></li>
             <li><a href="{{route('logout')}}">Logout</a></li>
+            @php
+                $userRoles = Auth::user()->roles->pluck('name');
+            @endphp
+            @if($userRoles->contains('publisher'))
+                <li><a href="{{route('user_products')}}">My Product</a></li>
+            @endif
             @php
                 $userRoles = Auth::user()->roles->pluck('name');
             @endphp

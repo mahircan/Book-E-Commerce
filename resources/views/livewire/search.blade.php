@@ -1,6 +1,5 @@
 <div>
-    {{-- The best athlete wants his opponent at his best. --}}
-    <input wire:model="search" name="search" type="text" class="input search-input" list="mylist" placeholder="Search product..."/>
+    <input wire:model="search" class="input search-input" name="search" type="text"  list="mylist" placeholder="Search product..."/>
 
     @if(!empty($query))
         <datalist id="mylist">

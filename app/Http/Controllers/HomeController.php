@@ -112,6 +112,17 @@ class HomeController extends Controller
         $setting = Setting::first();
         return view('home.contact' , ['setting' => $setting]);
     }
+    public function deals()
+    {
+        $setting = Setting::first();
+        $daily =   Product::select('id','title','image','price','slug')->limit(15)->inRandomOrder()->get();
+        $data =  [
+            'setting' => $setting,
+            'daily' => $daily,
+            'page'=>'home'
+        ];
+        return view('home.deals' , $data, ['setting' => $setting]);
+    }
 
     public function sendmessage(Request $request)
     {

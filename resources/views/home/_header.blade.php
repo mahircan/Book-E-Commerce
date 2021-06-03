@@ -26,31 +26,36 @@
                 <!-- Logo -->
                 <div class="header-logo">
                     <a class="logo" href="{{route('home')}}">
-                        <img src="{{ asset('assets')}}/img/logo.png" alt="">
+                        <img src="{{ asset('assets')}}/img/buketLogo.png" alt="">
                     </a>
                 </div>
-
                 <!-- Search -->
+
                 <div class="header-search">
                     <form action="{{route('getproduct')}}" method="post">
+                        <select class="input search-categories">
+                            <option>Booquet</option>
+                        </select>
                         @csrf
                         @livewire('search')
                         <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
                     </form>
                     @livewireScripts
-
                 </div>
                 <!-- /Search -->
             </div>
             <div class="pull-right">
                 <ul class="header-btns">
                     <!-- Account -->
-
                     <li class="header-account dropdown default-dropdown">
                         @auth
                             <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
                                 <div class="header-btns-icon">
-                                    <i class="fa fa-user-o"></i>
+                                    <div class="image">
+                                        @if (Auth::user()->profile_photo_path)
+                                            <img src="{{ Storage::url(Auth::user()->profile_photo_path)}}" class="img-circle elevation-2" alt="User Image" width="30" height="30">
+                                        @endif
+                                    </div>
                                 </div>
 
                                 <strong class="text-uppercase">{{ Auth::user()->name }}   <i class="fa fa-caret-down"></i>  </strong>
@@ -63,12 +68,10 @@
                         <ul class="custom-menu">
                             <li><a href="{{ route('myprofile') }}"><i class="fa fa-user-o"></i> My Account</a></li>
                             <li><a href="{{route('myreviews')}}"><i class="fa fa-comments-o"></i> My Reviews</a></li>
-                            <li><a href="{{route('user_products')}}"><i class="fa fa-book"></i> My Products</a></li>
                             <li><a href="{{route('user_shopcart')}}"><i class="fa fa-cart-plus"></i>My Shopcart</a></li>
                             <li><a href="{{route('user_orders')}}"><i class="fa fa-shopping-cart"></i>My Orders</a></li>
                             <li><a href="{{ route('logout') }}"><i class="fa fa-user-plus"></i> Logout</a></li>
                         </ul>
-
                     </li>
                     <!-- /Account -->
 
@@ -80,11 +83,9 @@
                                     <i class="fa fa-shopping-cart"></i>
                                     <span class="qty">{{\App\Http\Controllers\ShopcartController::countshopcart()}}</span>
                                 </div>
-
                                 <strong class="text-uppercase">My Cart:</strong>
                             </a>
                             <br>
-
                         </a>
                         <div class="custom-menu">
                             <div id="shopping-cart">
@@ -117,7 +118,6 @@
                             </div>
                         </div>
                     </li>
-
                     <!-- /Cart -->
 
                     <!-- Mobile nav toggle-->

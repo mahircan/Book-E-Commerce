@@ -3,7 +3,6 @@
 @section('title','My Reviews')
 
 @section('content')
-
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
@@ -55,13 +54,11 @@
                                 <td>{{ $rs->created_at}}</td>
                                 <td>
                                     <a href="{{route('admin_review_delete', ['id' => $rs->id])}}"  onclick="return confirm('Delete ! Are you sure?')" > <img src="{{asset('assets/admin/images')}}/delete.png" height="25"></a>
-
                                 </td>
                             </tr>
                         @endforeach
                     </table>
                 </div>
-
             </div>
             <!-- /row -->
         </div>

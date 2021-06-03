@@ -21,18 +21,14 @@
                 </div>
             </div><!-- /.container-fluid -->
         </section>
-
         <!-- Main content -->
         <section class="content">
-
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Order List</h3>
-
                 </div>
                 <div class="card-body">
-
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
@@ -46,7 +42,6 @@
                             <th>Date</th>
                             <th>Status</th>
                             <th style="width: 5px" colspan="2"> Actions</th>
-
                         </tr>
                         </thead>
                         <tbody>
@@ -72,7 +67,6 @@
                             </tr>
                         @endforeach
                     </table>
-
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
@@ -81,10 +75,8 @@
                 <!-- /.card-footer-->
             </div>
             <!-- /.card -->
-
         </section>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
 @endsection

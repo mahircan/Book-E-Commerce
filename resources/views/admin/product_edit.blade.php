@@ -31,12 +31,10 @@
 
         <!-- Main content -->
         <section class="content">
-
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Edit Product</h3>
-
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                             <i class="fas fa-minus"></i></button>
@@ -51,10 +49,7 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label >Category</label>
-
-
                                 <select class="form-control select2" name="category_id" style="width: 100%;">
-
                                     @foreach($datalist as $rs)
                                         <option value="{{ $rs->id }}" @if ($rs->id == $data->category_id) selected="selected"  @endif >
                                             {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}
@@ -62,7 +57,6 @@
                                     @endforeach
                                 </select>
                             </div>
-
                             <div class="form-group">
                                 <label >Title</label>
                                 <input type="text" id="title" name="title" value="{{$data->title}}" class="form-control"   >
@@ -99,22 +93,18 @@
                                         $('#summernote').summernote();
                                     });
                                 </script>
-
                             </div>
                             <div class="form-group">
                                 <label  >Slug</label>
                                 <input type="text" name="slug" value="{{$data->slug}}" class="form-control"   >
                             </div>
-
                             <div class="form-group">
                                 <label > Image </label>
                                 <input type="file" name="image" class="form-control">
-
                                 @if($data->image)
                                     <img src="{{\Illuminate\Support\Facades\Storage::url($data->image)}}" height="60" alt="">
                                 @endif
                             </div>
-
                             <div class="form-group">
                                 <label>Status</label>
                                 <select class="form-control select2" name="status" style="width: 100%;">
@@ -123,7 +113,6 @@
                                     <option>False</option>
                                 </select>
                             </div>
-
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
@@ -136,7 +125,6 @@
                     <!-- /.card-footer-->
                 </div>
                 <!-- /.card -->
-
         </section>
         <!-- /.content -->
     </div>

@@ -24,21 +24,15 @@
         </div>
         <div class="card-body">
 
-
             <!-- form start -->
-
             <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
-
                     <tr>
                         <th rowspan="8" align="center" valign="center">
-
                             @if ($data->profile_photo_path)
                                 <img src="{{ Storage::url($data->profile_photo_path)}}" height="300" style="border-radius: 10px" alt="">
                         @endif
                         </td>
-
-
                     </tr>
                     <tr>
                         <th>Name</th><td>{{ $data->name}}</td>
@@ -55,7 +49,6 @@
                     <tr>
                         <th>Date</th><td>{{ $data->created_at}}</td>
                     </tr>
-
                     <tr>
                         <th>Roles</th>
                         <td>
@@ -69,17 +62,13 @@
                                     </tr>
                                 @endforeach
                             </table>
-
-
                         </td>
                     </tr>
-
                     <tr>
                         <th>Add Role</th>
                         <td>
                             <form role="form" action="{{route('admin_user_role_add',['id'=>$data->id])}}" method="post"  enctype="multipart/form-data">
                                 @csrf
-
                                 <select name="roleid">
                                     @foreach($datalist as $rs)
                                         <option value="{{ $rs->id}}">{{ $rs->name}}</option>
@@ -87,13 +76,9 @@
                                 </select>
                                 <button type="submit" class="btn btn-primary">Add Role</button>
                             </form>
-
                         </td>
                     </tr>
-
-
                 </table>
-
             </div>
             <!-- /.card-body -->
             </form>
@@ -104,7 +89,6 @@
             <!-- /.card-footer-->
         </div>
         <!-- /.card -->
-
 </section>
 <!-- /.content -->
 </div>

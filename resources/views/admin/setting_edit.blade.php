@@ -94,7 +94,6 @@
                                         <label >Fax</label>
                                         <input type="text" name="fax"  value="{{$data->fax}}" class="form-control"   >
                                     </div>
-
                                     <div class="form-group">
                                         <label>Status</label>
                                         <select class="form-control select2" name="status" style="width: 100%;">
@@ -123,7 +122,6 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="custom-tabs-one-social" role="tabpanel" aria-labelledby="custom-tabs-one-social-tab">
-
                                     <div class="form-group">
                                         <label >Facebook</label>
                                         <input type="text" name="facebook"  value="{{$data->facebook}}" class="form-control"   >
@@ -170,19 +168,13 @@
                                     <button type="submit" class="btn btn-primary">Update Setting</button>
                                 </div>
                             </div>
-
                         </div>
-
                         <!-- /.card -->
                     </div>
-
                 </div>
-
-
             </section>
             <!-- /.content -->
         </form>
     </div>
     <!-- /.content-wrapper -->
-
 @endsection

@@ -4,11 +4,8 @@
     <strong>COPYRIGHT ©2021 ALL RIGHTS RESERVED |<a href="{{route('home')}}"> BOOQUET COMPANY</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.0.5
     </div>
 </footer>
-
-
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -16,7 +13,6 @@
 <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
 <!-- jQuery -->
 <script src="{{asset('assets')}}/admin/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

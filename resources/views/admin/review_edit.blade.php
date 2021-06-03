@@ -15,7 +15,6 @@
 
 <!-- Main content -->
 <section class="content">
-
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
@@ -23,8 +22,6 @@
             @include('home.message')
         </div>
         <div class="card-body">
-
-
             <!-- form start -->
             <form role="form" action="{{route('admin_review_update',['id'=>$data->id])}}" method="post"  enctype="multipart/form-data">
                 @csrf
@@ -76,7 +73,6 @@
                             </td>
                         </tr>
                     </table>
-
                 </div>
                 <!-- /.card-body -->
             </form>
@@ -87,7 +83,6 @@
             <!-- /.card-footer-->
         </div>
         <!-- /.card -->
-
 </section>
 <!-- /.content -->
 </div>

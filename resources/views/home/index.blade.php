@@ -4,14 +4,9 @@
 @section('description'){{ $setting->description }} @endsection
 @section('keywords',$setting->keywords)
 
-
-
 @section('content')
 
     @include('home._slider')
-
-
-
     <!-- section -->
     <div class="section">
         <!-- container -->
@@ -32,10 +27,10 @@
                 <!-- banner -->
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="banner banner-2">
-                        <img src="{{ asset('assets')}}/img/banner14.jpg" alt="">
+                        <img src="{{ asset('assets')}}/img/BannerBuket.jpg" alt="">
                         <div class="banner-caption">
-                            <h2 class="white-color">NEW<br>COLLECTION</h2>
-                            <button class="primary-btn">Shop Now</button>
+                            <h2 class="black-color">NEW<br>COLLECTION</h2>
+                            <button class="primary-btn"><a href="{{route('deals')}}">Shop Now</a></button>
                         </div>
                     </div>
                 </div>
@@ -93,8 +88,6 @@
             </div>
             <!-- /row -->
 
-
-
             <!-- section -->
             <div class="section">
                 <!-- container -->
@@ -147,13 +140,8 @@
                             <!-- /Product Single -->
 
                         @endforeach
-
-
                     </div>
                     <!-- /row -->
-
-
-
                     <!-- row -->
                     <div class="row">
                         <!-- section title -->
@@ -201,7 +189,6 @@
                             </div>
                             <!-- /Product Single -->
                         @endforeach
-
                     </div>
                     <!-- /row -->
                 </div>

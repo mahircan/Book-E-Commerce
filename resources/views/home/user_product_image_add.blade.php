@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="{{ asset('assets')}}/admin/dist/css/adminlte.min.css">
 </head>
 <body>
-
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Product : {{$data->title}}</h3>
@@ -74,6 +73,5 @@
     </div>
     <!-- /.card -->
 </div>
-
 </body>
 </html>

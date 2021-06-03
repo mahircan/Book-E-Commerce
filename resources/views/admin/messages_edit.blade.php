@@ -19,7 +19,6 @@
 
         <!-- Main content -->
         <section class="content">
-
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
@@ -32,7 +31,6 @@
                         @csrf
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
-
                                 <tr>
                                     <th>Id</th><td>{{ $data->id }}</td>
                                 </tr>
@@ -53,7 +51,6 @@
                                 </tr>
                                     <th>Admin Note</th><td>
                                     <textarea id="summernote" name="note"  >{{ $data->note }}</textarea>
-
                                 </td>
                                 <tr>
                                     <td></td> <td>
@@ -62,14 +59,9 @@
                                         </div>
                                     </td>
                                 </tr>
-
-
                             </table>
-
-
                         </div>
                         <!-- /.card-body -->
-
                     </form>
                     <div class="card-footer">
                         ...
@@ -77,7 +69,6 @@
                     <!-- /.card-footer-->
                 </div>
                 <!-- /.card -->
-
         </section>
         <!-- /.content -->
     </div>

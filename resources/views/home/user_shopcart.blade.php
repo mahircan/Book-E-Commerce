@@ -3,7 +3,6 @@
 @section('title','My Shopcart')
 
 @section('content')
-
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
@@ -28,9 +27,7 @@
 
                 <!-- Default box -->
                 <div class="card col-md-10">
-
                     <div class="card-body">
-
                         <table class="shopping-cart-table table">
                             <thead>
                             <tr>
@@ -40,7 +37,6 @@
                                 <th >Quantity</th>
                                 <th >Total</th>
                                 <th >Delete</th>
-
                             </tr>
                             </thead>
                             <tbody>
@@ -64,14 +60,10 @@
                                             @csrf
                                             <input  name="quantity" type="number" value="{{$rs->quantity}}" min="1" max="{{$rs->product->quantity}}" onchange="this.form.submit()">
                                         </form>
-
                                     </td>
                                     <td>{{ $rs->product->price * $rs->quantity}}</td>
-
-
                                     <td>
                                         <a href="{{route('user_shopcart_delete', ['id' => $rs->id])}}"  onclick="return confirm('Delete ! Are you sure?')" > <img src="{{asset('assets/admin/images')}}/delete.png" height="25"></a>
-
                                     </td>
                                 </tr>
                                 @php
@@ -106,9 +98,6 @@
                         </form>
                     </div>
                     <!-- /.card-body -->
-
-
-
                 </div>
                 <!-- /row -->
             </div>

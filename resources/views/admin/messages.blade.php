@@ -24,7 +24,6 @@
 
         <!-- Main content -->
         <section class="content">
-
             <!-- Default box -->
             <div class="card">
           @include('home.message')
@@ -39,7 +38,6 @@
                             <th>Subject</th>
                             <th>Message</th>
                             <th>Admin Note</th>
-
                             <th style="width: 5px" colspan="3"> Actions</th>
                         </tr>
                         </thead>
@@ -58,12 +56,10 @@
                                 <td> <a href="{{route('admin_message_delete', ['id' => $rs->id])}}" onclick="return confirm('Delete! Are you sure?')" > Delete </a> </td>
                             </tr>
                         @endforeach
-
                     </table>
                 </div>
                 <!-- /.card-body -->
             </div>
-
             <!-- /.card-body -->
             <div class="card-footer">
                 Footer
@@ -71,13 +67,11 @@
             <!-- /.card-footer-->
     </div>
     <!-- /.card -->
-
     </section>
     <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 @endsection
-
 @section('footer')
     <script src="{{asset('assets')}}/admin/plugins/chart.js/Chart.min.js"></script>
     <script src="{{asset('assets')}}/admin/plugins/datatables/jquery.dataTables.min.js"></script>

@@ -30,22 +30,18 @@
 
                 <!-- MAIN -->
                 <div id="main" class="col-md-10">
-
                     <!-- form start -->
                     <form role="form" action="{{route('user_product_store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="form-group">
                                 <label >Category</label>
-
                                 <select class="form-control select2" name="category_id" style="width: 100%;">
                                     @foreach($datalist as $rs)
                                         <option value="{{$rs->id}}"> {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }} </option>
                                     @endforeach
                                 </select>
-
                             </div>
-
                             <div class="form-group">
                                 <label >Title</label>
                                 <input type="text" id="title" name="title" class="form-control"   >
@@ -85,12 +81,10 @@
                                 <label  >Slug</label>
                                 <input type="text" name="slug" class="form-control"   >
                             </div>
-
                             <div class="form-group">
                                 <label  >Image</label>
                                 <input type="file" name="image"  class="form-control">
                             </div>
-
                             <div class="form-group">
                                 <label>Status</label>
                                 <select class="form-control select2" name="status" style="width: 100%;">
@@ -98,18 +92,13 @@
                                     <option>True</option>
                                 </select>
                             </div>
-
                         </div>
                         <!-- /.card-body -->
-
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Add Product</button>
                         </div>
                     </form>
-
-
                 </div>
-
             </div>
             <!-- /row -->
         </div>

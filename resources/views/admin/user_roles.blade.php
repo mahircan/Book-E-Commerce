@@ -12,7 +12,6 @@
 <!-- Custom stlylesheet -->
 <link type="text/css" rel="stylesheet" href="{{ asset('assets')}}/css/style.css" />
 
-
 <!-- Main content -->
 <section class="content">
 
@@ -24,9 +23,7 @@
         </div>
         <div class="card-body">
 
-
             <!-- form start -->
-
             <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                     <tr>
@@ -38,7 +35,6 @@
                     <tr>
                         <th>Email</th><td>{{ $data->email}}</td>
                     </tr>
-
                     <tr>
                         <th>Roles</th>
                         <td>
@@ -52,17 +48,13 @@
                                     </tr>
                                 @endforeach
                             </table>
-
-
                         </td>
                     </tr>
-
                     <tr>
                         <th>Add Role</th>
                         <td>
                             <form role="form" action="{{route('admin_user_role_add',['id'=>$data->id])}}" method="post"  enctype="multipart/form-data">
                                 @csrf
-
                                 <select name="roleid">
                                     @foreach($datalist as $rs)
                                         <option value="{{ $rs->id}}">{{ $rs->name}}</option>
@@ -70,13 +62,9 @@
                                 </select>
                                 <button type="submit" class="btn btn-primary">Add Role</button>
                             </form>
-
                         </td>
                     </tr>
-
-
                 </table>
-
             </div>
             <!-- /.card-body -->
             </form>
@@ -87,7 +75,6 @@
             <!-- /.card-footer-->
         </div>
         <!-- /.card -->
-
 </section>
 <!-- /.content -->
 </div>

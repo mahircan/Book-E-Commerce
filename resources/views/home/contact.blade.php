@@ -5,10 +5,6 @@
 @section('description') {{$setting->description}} @endsection
 @section('keywords',$setting -> keywords)
 
-
-
-
-
 @section('content')
 
 <!-- BREADCRUMB -->
@@ -28,12 +24,10 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-
-<div class="col-md-7">
+            <div class="col-md-7">
             <h3 class="section-title">İletişim Bilgileri</h3>
             {!!  $setting->contact  !!}
         </div>
-
         <div class="col-md-5">
             <h3 class="section-title">İletişim Formu</h3>
             @include('home.message')
@@ -63,9 +57,7 @@
                         </div>
                     </div>
             </form>
-
     </div>
-
         </div>
         <!-- /row -->
     </div>

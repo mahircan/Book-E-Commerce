@@ -40,6 +40,7 @@ Route::get('/categoryproducts/{id}/{slug}', [HomeController::class, 'categorypro
 Route::get('/addtocart/{id}', [HomeController::class, 'addtocart'])->name('addtocart');
 Route::post('/getproduct', [HomeController::class, 'getproduct'])->name('getproduct');
 Route::get('/productlist/{search}', [HomeController::class, 'productlist'])->name('productlist');
+Route::get('/deals', [HomeController::class, 'deals'])->name('deals');
 
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->where(['id'=> '[0-9]+', 'name'=>'[A-Za-z]+'])->name('test');
 
@@ -154,47 +155,50 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 
 });
 
+Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
 
-Route::get('/profile', [UserController::class, 'index'])->name('userprofile');
+    Route::get('/profile', [UserController::class, 'index'])->name('userprofile');
+// Route::get('/profile', [UserController::class, 'index'])->name('userprofile');
 
 #Product
-Route::prefix('product')->group(function () {
-    // Route assigned name "admin.users"...
-    Route::get('/', [ProductController::class, 'index'])->name('user_products');
-    Route::get('create', [ProductController::class, 'create'])->name('user_product_add');
-    Route::post('store', [ProductController::class, 'store'])->name('user_product_store');
-    Route::get('edit/{id}', [ProductController::class, 'edit'])->name('user_product_edit');
-    Route::post('update/{id}', [ProductController::class, 'update'])->name('user_product_update');
-    Route::get('delete/{id}', [ProductController::class, 'destroy'])->name('user_product_delete');
-    Route::get('show', [ProductController::class, 'show'])->name('user_product_show');
-});
+    Route::prefix('product')->group(function () {
+        // Route assigned name "admin.users"...
+        Route::get('/', [ProductController::class, 'index'])->name('user_products');
+        Route::get('create', [ProductController::class, 'create'])->name('user_product_add');
+        Route::post('store', [ProductController::class, 'store'])->name('user_product_store');
+        Route::get('edit/{id}', [ProductController::class, 'edit'])->name('user_product_edit');
+        Route::post('update/{id}', [ProductController::class, 'update'])->name('user_product_update');
+        Route::get('delete/{id}', [ProductController::class, 'destroy'])->name('user_product_delete');
+        Route::get('show', [ProductController::class, 'show'])->name('user_product_show');
+    });
 #Product Image Gallery
-Route::prefix('image')->group(function () {
-    Route::get('create/{product_id}', [ImageController::class, 'create'])->name('user_image_add');
-    Route::post('store/{product_id}', [ImageController::class, 'store'])->name('user_image_store');
-    Route::get('delete/{id}/{product_id}', [ImageController::class, 'destroy'])->name('user_image_delete');
-    Route::get('show', [ImageController::class, 'show'])->name('admin_image_show');
-});
+    Route::prefix('image')->group(function () {
+        Route::get('create/{product_id}', [ImageController::class, 'create'])->name('user_image_add');
+        Route::post('store/{product_id}', [ImageController::class, 'store'])->name('user_image_store');
+        Route::get('delete/{id}/{product_id}', [ImageController::class, 'destroy'])->name('user_image_delete');
+        Route::get('show', [ImageController::class, 'show'])->name('admin_image_show');
+    });
 
 #ShopCart
-Route::prefix('shopcart')->group(function () {
-    // Route assigned name "admin.users"...
-    Route::get('/', [ShopcartController::class, 'index'])->name('user_shopcart');
-    Route::post('store/{id}', [ShopcartController::class, 'store'])->name('user_shopcart_add');
-    Route::post('update/{id}', [ShopcartController::class, 'update'])->name('user_shopcart_update');
-    Route::get('delete/{id}', [ShopcartController::class, 'destroy'])->name('user_shopcart_delete');
-});
+    Route::prefix('shopcart')->group(function () {
+        // Route assigned name "admin.users"...
+        Route::get('/', [ShopcartController::class, 'index'])->name('user_shopcart');
+        Route::post('store/{id}', [ShopcartController::class, 'store'])->name('user_shopcart_add');
+        Route::post('update/{id}', [ShopcartController::class, 'update'])->name('user_shopcart_update');
+        Route::get('delete/{id}', [ShopcartController::class, 'destroy'])->name('user_shopcart_delete');
+    });
 
 #Order
-Route::prefix('order')->group(function () {
-    // Route assigned name "admin.users"...
-    Route::get('/', [OrderController::class, 'index'])->name('user_orders');
-    Route::post('create', [OrderController::class, 'create'])->name('user_order_add');
-    Route::post('store', [OrderController::class, 'store'])->name('user_order_store');
-    Route::get('edit/{id}', [OrderController::class, 'edit'])->name('user_order_edit');
-    Route::post('update/{id}', [OrderController::class, 'update'])->name('user_order_update');
-    Route::get('delete/{id}', [OrderController::class, 'destroy'])->name('user_order_delete');
-    Route::get('show/{id}', [OrderController::class, 'show'])->name('user_order_show');
+    Route::prefix('order')->group(function () {
+        // Route assigned name "admin.users"...
+        Route::get('/', [OrderController::class, 'index'])->name('user_orders');
+        Route::post('create', [OrderController::class, 'create'])->name('user_order_add');
+        Route::post('store', [OrderController::class, 'store'])->name('user_order_store');
+        Route::get('edit/{id}', [OrderController::class, 'edit'])->name('user_order_edit');
+        Route::post('update/{id}', [OrderController::class, 'update'])->name('user_order_update');
+        Route::get('delete/{id}', [OrderController::class, 'destroy'])->name('user_order_delete');
+        Route::get('show/{id}', [OrderController::class, 'show'])->name('user_order_show');
+    });
 });
 
 Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');

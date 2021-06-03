@@ -2,9 +2,7 @@
 
 @section('title', 'Order Products')
 
-
 @section('content')
-
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
@@ -25,10 +23,8 @@
                     @csrf
                     <div class="col-md-6">
                         <div class="billing-details">
-
                             <div class="section-title">
                                 <h3 class="title">Order Details</h3>
-
                             </div>
                             <div class="form-group">
                                 <input class="input" type="text" name="name" value="{{ Auth::user()->name }}" placeholder="Name & Surname">
@@ -43,26 +39,19 @@
                             <div class="form-group">
                                 <input class="input" type="text" name="phone"  value="{{ Auth::user()->phone }}" placeholder="Phone Number">
                             </div>
-
                         </div>
                     </div>
-
                     <div class="col-md-6">
-
                         <div class="payments-methods">
                             <div class="section-title">
                                 <h4 class="title">Payments Detail Total = $ {{$total}} </h4>
                             </div>
                             <div class="input-checkbox">
                                 <input type="hidden" name="total" value="{{$total}}">
-
-
                             </div>
-
                             <div class="form-group">
                                 <input class="input" type="text" name="cardname" value="{{ Auth::user()->name }}" placeholder=" Card Name & Surname">
                             </div>
-
                             <div class="form-group">
                                 <input class="input" type="number" name="cardnumber"  value="" placeholder="Card Number">
                             </div>
@@ -72,19 +61,12 @@
                             <div class="form-group">
                                 <input class="input" type="text" name="key"  value="" placeholder="Secret number">
                             </div>
-
                         </div>
                     </div>
-
-
                     <div class="pull-right">
                         <button class="primary-btn">Place Order</button>
                     </div>
-            </div>
-
-        </div>
         </form>
-
     </div>
     <!-- /row -->
     </div>

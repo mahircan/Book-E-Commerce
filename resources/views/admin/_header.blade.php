@@ -8,9 +8,7 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{ route('admin_home') }}" class="nav-link">Home</a>
         </li>
-
     </ul>
-
 @include('home.message')
 <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">

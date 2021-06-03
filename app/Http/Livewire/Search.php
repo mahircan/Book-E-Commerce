@@ -14,7 +14,6 @@ class Search extends Component
     {
         $datalist = Product::where('title', 'like', '%'.$this->search.'%')->get();
         return view('livewire.search', ['datalist'=>$datalist, 'query'=>$this->search]);
-
     }
 
     #return view('livewire.search');

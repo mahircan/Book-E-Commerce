@@ -26,7 +26,6 @@
                     <!-- /banner -->
                 @endforeach
 
-
             </div>
             <!-- /home slick -->
         </div>

@@ -4,7 +4,6 @@
 @section('description'){{ $data->description }} @endsection
 @section('keywords',$data->keywords)
 
-
 @section('content')
 
     <div id="breadcrumb">
@@ -32,14 +31,11 @@
                             <div class="product-view">
                                 <img src="{{ Storage::url($data->image)}}" style="height: 300px" alt="">
                             </div>
-
                             @foreach($datalist as $rs)
-
                                 <div class="product-view">
                                     <img src="{{ Storage::url($rs->image)}}" style="height: 300px" alt="">
                                 </div>
                             @endforeach
-
                         </div>
                         <div id="product-view">
                             <div class="product-view">
@@ -75,24 +71,8 @@
                                 <a href="#tab2">{{ $countreview  }} Review(s) {{$avgrev }}  / Add Review</a>
                             </div>
                             <p><strong>Availability:</strong> In Stock</p>
-                            <p><strong>Brand:</strong> E-SHOP</p>
+                            <p><strong>Brand:</strong> Booquet</p>
                             <p>{{$data->descripton}}</p>
-                            <div class="product-options">
-                                <ul class="size-option">
-                                    <li><span class="text-uppercase">Size:</span></li>
-                                    <li class="active"><a href="#">S</a></li>
-                                    <li><a href="#">XL</a></li>
-                                    <li><a href="#">SL</a></li>
-                                </ul>
-                                <ul class="color-option">
-                                    <li><span class="text-uppercase">Color:</span></li>
-                                    <li class="active"><a href="#" style="background-color:#475984;"></a></li>
-                                    <li><a href="#" style="background-color:#8A2454;"></a></li>
-                                    <li><a href="#" style="background-color:#BF6989;"></a></li>
-                                    <li><a href="#" style="background-color:#9A54D8;"></a></li>
-                                </ul>
-                            </div>
-
                             <div class="product-btns">
                                 <form action="{{route('user_shopcart_add',['id' => $data->id])}}" method="post">
                                     @csrf
@@ -149,8 +129,6 @@
                                                     </div>
                                                 @endforeach
 
-
-
                                                 <ul class="reviews-pages">
                                                     <li class="active">1</li>
                                                     <li><a href="#">2</a></li>
@@ -164,9 +142,6 @@
                                             @livewire('review', ['id' => $data->id])
                                         </div>
                                     </div>
-
-
-
                                 </div>
                             </div>
                         </div>
@@ -174,7 +149,6 @@
 
                 </div>
                 <!-- /Product Details -->
-
             </div>
             <!-- /row -->
         </div>

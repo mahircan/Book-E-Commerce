@@ -14,7 +14,6 @@
 @endsection
 
 @section('content')
-
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
@@ -40,7 +39,6 @@
                         </div>
                     @endforeach
                 </div>
-
             </div>
             <!-- /row -->
         </div>

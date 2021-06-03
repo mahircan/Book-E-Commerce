@@ -28,12 +28,9 @@
 
                 <!-- Default box -->
                 <div class="card col-md-10">
-
                     <div class="card">
-
                         <!-- /.card-header -->
                         <div class="card-body">
-
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
@@ -46,7 +43,6 @@
                                     <th>Date</th>
                                     <th>Status</th>
                                     <th style="width: 5px" colspan="2"> Actions</th>
-
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -68,8 +64,6 @@
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
-
-
                 </div>
                 <!-- /row -->
             </div>

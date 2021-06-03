@@ -24,12 +24,10 @@
 
         <!-- Main content -->
         <section class="content">
-
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
                 <a href="{{route('admin_product_add')}}" type="button" class="btn btn-block btn-info" style="width: 200px">Add Product</a>
-
                 </div>
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">
@@ -73,8 +71,6 @@
             </div>
             <!-- /.card -->
 
-
-
             <!-- /.card-body -->
             <div class="card-footer">
                 Footer
@@ -87,7 +83,6 @@
     <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
 @endsection
 
 @section('footer')

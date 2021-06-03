@@ -5,10 +5,6 @@
 @section('description') {{$setting->description}} @endsection
 @section('keywords',$setting -> keywords)
 
-
-
-
-
 @section('content')
 
 <!-- BREADCRUMB -->
@@ -29,9 +25,7 @@
         <!-- row -->
         <div class="row">
 
-
             {!!  $setting->aboutus  !!}
-
 
         </div>
         <!-- /row -->

@@ -24,7 +24,6 @@
 
         <!-- Main content -->
         <section class="content">
-
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
@@ -55,7 +54,6 @@
                                         <a href="{{route('admin_user_show',['id' => $rs->user->id])}}" onclick="return !window.open(this.href, '','top=50 left=100 width=800,height=600')">
                                             {{ $rs->user->name}}
                                         </a>
-
                                     </td>
                                     <td> <a href="{{route('product',['id' => $rs->product->id,'slug' => $rs->product->slug ])}}" target="_blank">
                                             {{ $rs->product->title}} </a>
@@ -72,7 +70,6 @@
 
                                     <td>
                                         <a href="{{route('admin_review_delete', ['id' => $rs->id])}}"  onclick="return confirm('Delete ! Are you sure?')" > <img src="{{asset('assets/admin/images')}}/delete.png" height="25"></a>
-
                                     </td>
                                 </tr>
                             @endforeach
@@ -81,9 +78,6 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-
-
-
                 <!-- /.card-body -->
                 <div class="card-footer">
                     Footer
@@ -91,12 +85,10 @@
                 <!-- /.card-footer-->
             </div>
             <!-- /.card -->
-
         </section>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
 @endsection
 
 @section('footer')

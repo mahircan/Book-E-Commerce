@@ -3,7 +3,6 @@
 @section('title','Order Items')
 
 @section('content')
-
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
@@ -28,9 +27,7 @@
 
                 <!-- Default box -->
                 <div class="card col-md-10">
-
                     <div class="card-body">
-
                         <table class="shopping-cart-table table">
                             <thead>
                             <tr>
@@ -57,7 +54,6 @@
                                     <td> <a href="{{route('product',['id' => $rs->product->id,'slug' => $rs->product->slug ])}}">
                                             {{ $rs->product->title}}</a>
                                     </td>
-
                                     <td>{{ $rs->product->price}}</td>
                                     <td> {{$rs->quantity}}</td>
                                     <td>{{ $rs->amount}}</td>
@@ -74,15 +70,10 @@
                                 <th>SUBTOTAL</th>
                                 <th colspan="2" class="sub-total">${{$rs->order->total}}</th>
                             </tr>
-
                             </tfoot>
                         </table>
-
                     </div>
                     <!-- /.card-body -->
-
-
-
                 </div>
                 <!-- /row -->
             </div>
