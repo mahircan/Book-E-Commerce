@@ -21,7 +21,6 @@
                 </div>
             </div><!-- /.container-fluid -->
         </section>
-
         <!-- Main content -->
         <section class="content">
 
@@ -32,7 +31,6 @@
                     @include('home.message')
                 </div>
                 <div class="card">
-
                     <!-- /.card-header -->
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
@@ -43,7 +41,6 @@
                                 <th>Answer</th>
                                 <th>Status</th>
                                 <th style="width: 5px" colspan="2"> Actions</th>
-
                             </tr>
                             </thead>
                             <tbody>
@@ -56,7 +53,6 @@
                                     <td><a href="{{route('admin_faq_edit', ['id' => $rs->id])}}" >  <img src="{{asset('assets/admin/images')}}/edit.png" height="25"></a></td>
                                     <td>
                                         <a href="{{route('admin_faq_delete', ['id' => $rs->id])}}"  onclick="return confirm('Delete ! Are you sure?')" > <img src="{{asset('assets/admin/images')}}/delete.png" height="25"></a>
-
                                     </td>
                                 </tr>
                             @endforeach
@@ -65,22 +61,12 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-
-
-
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    Footer
-                </div>
-                <!-- /.card-footer-->
             </div>
             <!-- /.card -->
-
         </section>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
 @endsection
 
 @section('footer')

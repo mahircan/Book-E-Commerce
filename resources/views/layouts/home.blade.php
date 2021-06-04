@@ -34,9 +34,7 @@
     <![endif]-->
 @yield('css')
     @yield('headerjs')
-
 </head>
-
 <body>
 @include('home._header')
 <!-- NAVIGATION -->
@@ -55,9 +53,7 @@
 @section('content')
     içerik alanı
     @show
-
 @include('home._footer')
 @yield('footerjs')
-
 </body>
 </html>

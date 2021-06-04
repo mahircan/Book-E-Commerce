@@ -62,11 +62,7 @@
                 <!-- /.card-body -->
             </div>
 
-            <!-- /.card-body -->
-            <div class="card-footer">
-                Footer
-            </div>
-            <!-- /.card-footer-->
+        </section>
     </div>
     <!-- /.card -->
 

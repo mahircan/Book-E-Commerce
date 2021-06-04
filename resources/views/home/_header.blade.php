@@ -57,7 +57,6 @@
                                         @endif
                                     </div>
                                 </div>
-
                                 <strong class="text-uppercase">{{ Auth::user()->name }}   <i class="fa fa-caret-down"></i>  </strong>
                             </div>
                         @endauth

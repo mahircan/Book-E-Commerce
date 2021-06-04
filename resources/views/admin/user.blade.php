@@ -32,7 +32,7 @@
                             <thead>
                             <tr>
                                 <th>Id</th>
-                                <th></th>
+                                <th>Image</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
@@ -61,7 +61,6 @@
                                             <i class="nav-icon fas fa-plus-circle"></i>
                                         </a>
                                     </td>
-
                                     <td><a href="{{route('admin_user_edit', ['id' => $rs->id])}}" >  <img src="{{asset('assets/admin/images')}}/edit.png" height="25"></a></td>
                                     <td>
                                         <a href="{{route('admin_user_delete', ['id' => $rs->id])}}"  onclick="return confirm('Delete ! Are you sure?')" > <img src="{{asset('assets/admin/images')}}/delete.png" height="25"></a>
@@ -73,11 +72,6 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    Footer
-                </div>
-                <!-- /.card-footer-->
             </div>
             <!-- /.card -->
         </section>

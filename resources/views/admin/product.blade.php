@@ -70,12 +70,7 @@
                 <!-- /.card-body -->
             </div>
             <!-- /.card -->
-
-            <!-- /.card-body -->
-            <div class="card-footer">
-                Footer
-            </div>
-            <!-- /.card-footer-->
+        </section>
     </div>
     <!-- /.card -->
 

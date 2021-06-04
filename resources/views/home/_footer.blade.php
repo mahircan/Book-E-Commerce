@@ -10,10 +10,9 @@
             <!-- footer widget -->
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="footer">
-
-                    <h4>Address</h4>
-                    {{$setting->company}}<br>
-                    {{$setting->address}}<br>
+                    <h3 class="footer-header">Address</h3>
+                    <strong>  {{$setting->company}} </strong> <br>
+                    <strong>Address : </strong>{{$setting->address}}<br>
                     <strong>Phone : </strong> {{$setting->phone}}<br>
                     <strong>Fax : </strong> {{$setting->fax}}<br>
                     <strong>email : </strong> {{$setting->email}}<br>
@@ -24,8 +23,6 @@
                         @if($setting->twitter!= null)<li><a href="{{$setting->twitter}}" target="_blank"><i class="fa fa-twitter"></i></a></li>@endif
                             @if($setting->instagram!= null)<li><a href="{{$setting->instagram}}" target="_blank"><i class="fa fa-instagram"></i></a></li>@endif
                             @if($setting->youtube!= null)<li><a href="{{$setting->youtube}}" target="_blank"><i class="fa fa-youtube"></i></a></li>@endif
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                     </ul>
                     <!-- /footer social -->
                 </div>
@@ -46,7 +43,6 @@
             <!-- /footer widget -->
 
             <div class="clearfix visible-sm visible-xs"></div>
-
             <!-- footer widget -->
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="footer">
